@@ -30,6 +30,10 @@
                         <td> 2022</td>
                         <td>female</td>
                     </tr>
+
+             <button type="button">Edit</button>
+             <button type="button">Add</button>
+             <button type="button">Remove</button>
                 </div>
 
          <div class="boxContainer">
@@ -46,52 +50,38 @@
            </div>
             </table>
         </div>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        First Name:
-                    </td>
-                    <td>
-                        <input type="text" placeholder="First Name" name="">
-                    </td>
-                    <td> 
-                        Last Name:
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Last Name" name="">
-                    </td>
-                    <td>
-                        Date of Birthday:
-                    </td>
-                    <td>
-                        <input type="Phone" placeholder="dd/mm/yy" name="">
-                    </td>
-                    <td>
-                        Password:
-                    </td>
-                    <td>
-                        <input type="Password" placeholder="Password" name="">
-                    </td>
-                    <td>
-                        Whish list:
-                    </td>
-                    <td>
-                        <input type="text" placeholder="100000$" name="">
-                    </td>
-                    <td>
-                        Gender:
-                        <input type="radio" name="Gender">Male
-                        <input type="radio" name="Gender">Female
-                    </td>
-                    
-                        <button type="button">Ok</button>
-                        <button type="button">Cancel</button>
-                        <button type="button">Edit</button>
-                        <button type="button">Add</button>
-                        <button type="button">Remove</button>
-                    
-            </table>
-        </form>
+        <div class="table2">
+            First Name:<input type="text" placeholder="First Name" name="anun" id="anun">
+            Last Name:<input type="text" placeholder="Last Name" name="maganun" id="maganun">
+            Date of Birthday:<input type="Phone" placeholder="dd/mm/yy" name="darik" id="darik">
+            Password:<input type="Password" placeholder="Password" name="passkey" id="passkey">
+            Whish list:<input type="text" placeholder="100000$" name="whish" id="whish">
+            Gender:
+             <input type="radio" name="Gender">Male
+             <input type="radio" name="Gender">Female
+               
+             <button type="button" onclick="addHtmlTableRow();">Ok</button>
+             <button type="button">Cancel</button>
+        </div>  
+        <script>
+            function addHtmlTableRow()
+            {
+             var table = document.getElementById("table"),
+             newRow = table.insertRow(table.length),
+             cell1= newRow.insertCell(0),
+             cell2= newRow.insertCell(1),
+             cell3= newRow.insertCell(2),
+             anun = document.getElementById("anun").value,
+             maganun = document.getElementById("maganun").value,
+             darik = document.getElementById("darik").value,
+             passkey = document.getElementById("passkey").value,
+             whish = document.getElementById("whish").value
+            //  anun = document.getElementById("anun").value,
+
+            cell1.innerHTML = anun;
+            cell2.innerHTML =maganun;
+            cell3.innerHTML = darik;
+            }
+        </script>  
     </body> 
 </html> 
