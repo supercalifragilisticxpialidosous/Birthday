@@ -1,0 +1,19 @@
+
+table {
+    border-collapse: collapse;
+}
+table th {
+    background-color: #B57369;
+    text-align: center;
+    color: #fff;
+
+}
+table td{ 
+    background-color: #fff;
+}
+body 
+    {
+        background-image: url("./Balloons.png");
+        background-color: #E1988C;
+    }
+h1{color:#fff}
