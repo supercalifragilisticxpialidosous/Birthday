@@ -18,3 +18,9 @@ body
     }
 h1{color:#fff}
 .table2 input{ display: block;}
+
+.container{overflow: hidden;}
+.selections{float: left;}
+.table2 input{display: block;}
+tr{transition: all .25s ease-in-out}
+tr:hover{background-color: aqua; cursor: pointer;} 

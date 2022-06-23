@@ -2,19 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="./style.css" rel="stylesheet">
+        <!-- <link href="./style.css" rel="stylesheet"> -->
         <title>
             Birthday calendar
         </title>
             <h1> Staff Birthday Calendar</h1>
-       
-    
     </head>
 
     <body>
-        <div>
+        <div class="container">
             <table id="top" border="1">
-                <div class=" selections">
+                <div class="selections">
                     <tr>
                         <th class="name">Name</th>
                         <th class="birthday">Birthday</th>
@@ -24,16 +22,26 @@
                         <td> jose</td>
                         <td> 2022</td>
                         <td> male</td>
+                        <td><button id="ed" onclick="editTableRow();">Edit</button></td>
+                        <td><button id="del" onclick="removeSelectedRow">Remove</button></td>
                     </tr>
                     <tr>
                         <td> josefina</td>
                         <td> 2022</td>
                         <td>female</td>
+                    <td><button id="ed" onclick="editTableRow();">Edit</button></td>
+                    <td><button id="del" onclick="removeSelectedRow">Remove</button></td>
                     </tr>
 
-             <button type="button">Edit</button>
-             <button type="button">Add</button>
-             <button type="button">Remove</button>
+                    <tr>
+                        <td> rosealinda</td>
+                        <td> 20 </td>
+                        <td>female</td>
+                        <td><button id="ed"  onclick="editTableRow();">Edit</button></td>
+                        <td><button id="del" onclick="removeSelectedRow">Remove</button></td>
+                    </tr>
+
+             
                 </div>
 
          <div class="boxContainer">
@@ -50,37 +58,120 @@
            </div>
             </table>
         </div>
-        <div class="table2">
-            First Name:<input type="text" placeholder="First Name" name="anun" id="anun">
-            Last Name:<input type="text" placeholder="Last Name" name="maganun" id="maganun">
-            Date of Birthday:<input type="Phone" placeholder="dd/mm/yy" name="darik" id="darik">
-            Password:<input type="Password" placeholder="Password" name="passkey" id="passkey">
-            Whish list:<input type="text" placeholder="100000$" name="whish" id="whish">
+        <div class="table2" id="ids">
+            First Name :<input type="text" placeholder="First Name" name="anun" id="anun">
+            Last Name :<input type="text" placeholder="Last Name" name="maganun" id="maganun">
+            Date of Birthday :<input type="date" placeholder="dd/mm/yy" name="darik" id="darik">
+            Password :<input type="Password" placeholder="Password" name="passkey" id="passkey">
+            Whish list :<input type="text" placeholder="100000$" name="whish" id="whish">
             Gender:
-             <input type="radio" name="Gender">Male
-             <input type="radio" name="Gender">Female
+             <input type="radio" id="male" name="Gender">Male
+             <input type="radio" id="male" name="Gender">Female
                
-             <button type="button" onclick="addHtmlTableRow();">Ok</button>
+             <button onclick="addTable();">Ok</button>
              <button type="button">Cancel</button>
         </div>  
         <script>
-            function addHtmlTableRow()
-            {
-             var table = document.getElementById("table"),
+            
+            var rIndex,
+                table= document.getElementById("top"),
+                ed=document.getElementById("edit"),
+                 del=document.getElementById("del");
+            
+
+            function checkEmptyInput(){
+              var isEmpty = false,
+                 anun = document.getElementById("anun").value,
+                 maganun = document.getElementById("maganun").value,
+                 darik = document.getElementById("darik").value,
+                 passkey = document.getElementById("passkey").value,
+                 whish = document.getElementById("whish").value,
+                 gender=document.getElementById("male").value;
+                 
+
+              if(anun === ""){
+                alert(" empty  first name");
+                isEmpty = true;}
+
+                else if(maganun === ""){
+                alert(" empty last name");
+                isEmpty = true;}
+
+                else if(darik === ""){
+                alert(" empty age");
+                isEmpty = true;}
+
+                if(passkey === ""){
+                alert("empty password");
+                isEmpty = true;}
+                return isEmpty;
+            }
+             
+            
+            function addTable(){
+                if (!checkEmptyInput()){
+             var table = document.getElementById("top"),
              newRow = table.insertRow(table.length),
              cell1= newRow.insertCell(0),
              cell2= newRow.insertCell(1),
              cell3= newRow.insertCell(2),
-             anun = document.getElementById("anun").value,
-             maganun = document.getElementById("maganun").value,
+             cell4= newRow.insertCell(3),
+             cell5= newRow.insertCell(4);
+             var holeNames = document.getElementById("anun").value + "";
+             holeNames += document.getElementById("maganun").value;
              darik = document.getElementById("darik").value,
-             passkey = document.getElementById("passkey").value,
-             whish = document.getElementById("whish").value
+             gender = document.getElementById("male").value,
+             ed = document.getElementById("ed").value,
+             del=document.getElementById("del").value;
             //  anun = document.getElementById("anun").value,
 
-            cell1.innerHTML = anun;
-            cell2.innerHTML =maganun;
-            cell3.innerHTML = darik;
+            cell1.innerHTML = holeNames;
+            cell2.innerHTML =darik;
+            cell3.innerHTML = gender;
+            cell4.innerHTML = ed ;
+            cell5.innerHTML=del;
+             }
+            }
+
+            function selectedRowToInput()
+            {
+                var rIndex,table= document.getElementById("top");
+                for (var i = 1; i < table.rows.length; i++)
+                {table.rows[i].onclick = function ()
+                {rIndex = this.rowIndex;
+                 document.getElementById("anun").value = this.cells[0].innerHTML;
+             holeNames += document.getElementById("maganun").value = this.cells[0].innerHTML;
+             darik = document.getElementById("darik").value = this.cells[1].innerHTML,
+             passkey = document.getElementById("passkey").value = this.cells[2].innerHTML,
+             whish = document.getElementById("whish").value = this.cells[3].innerHTML;
+            //  anun = document.getElementById("anun").value = this.cells[4].innerHTML,
+
+            };
+            }
+            }
+            selectedRowToInput();
+
+            function editTableRow(){
+                var anun = document.getElementById("anun").value,
+                  maganun = document.getElementById("maganun").value,
+                  darik = document.getElementById("darik").value,
+                  passkey = document.getElementById("passkey").value,
+                 whish = document.getElementById("whish").value;
+              
+                table.rows[rIndex].cells[0].innerHTML = "anun";
+                table.rows[rIndex].cells[1].innerHTML = "maganun";
+                table.rows[rIndex].cells[2].innerHTML = "darik";
+                table.rows[rIndex].cells[3].innerHTML = "passkey";
+                table.rows[rIndex].cells[4].innerHTML = "whish";
+              
+            }
+            function removeSelectedRow(){
+                var anun = document.getElementById("anun").value = "";
+                 document.getElementById("maganun").value = "",
+                 document.getElementById("darik").value  = "",
+                 document.getElementById("passkey").value = "",
+                 document.getElementById("whish").value = "";
+              table.deleteRow(rIndex);  
             }
         </script>  
     </body> 
