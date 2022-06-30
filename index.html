@@ -1,36 +1,53 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <!-- <link href="./style.css" rel="stylesheet"> -->
+        <link href="./style.css" rel="stylesheet">
         <title>
             Birthday calendar
         </title>
             <h1> Staff Birthday Calendar</h1>
     </head>
 
+
     <body>
-        <div class="container">
-            <table id="top" border="1">
+        <div >
+            <table class="container" id="top" border="1">
                 <div class="selections">
                     <tr>
-                        <th class="name">Name</th>
-                        <th class="birthday">Birthday</th>
-                        <th colspan="3" class="gender">Gender</th>
-                    </tr>
+                        <th class="name">Name &#9662;</th>
+                        <th class="birthday">Birthday &#9662;</th>
+                        <th colspan="3" class="gender">Gender &#9662<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.207 18.8618L13.8667 12.5215C14.8506 11.2495 15.3828 9.69434 15.3828 8.05859C15.3828 6.10059 14.6187 4.26465 13.2368 2.88037C11.855 1.49609 10.0142 0.734375 8.05859 0.734375C6.10303 0.734375 4.26221 1.49854 2.88037 2.88037C1.49609 4.26221 0.734375 6.10059 0.734375 8.05859C0.734375 10.0142 1.49854 11.855 2.88037 13.2368C4.26221 14.6211 6.10059 15.3828 8.05859 15.3828C9.69434 15.3828 11.2471 14.8506 12.519 13.8691L18.8594 20.207C18.878 20.2256 18.9 20.2404 18.9243 20.2505C18.9486 20.2605 18.9747 20.2657 19.001 20.2657C19.0273 20.2657 19.0533 20.2605 19.0776 20.2505C19.1019 20.2404 19.124 20.2256 19.1426 20.207L20.207 19.145C20.2256 19.1264 20.2404 19.1044 20.2505 19.0801C20.2605 19.0558 20.2657 19.0297 20.2657 19.0034C20.2657 18.9771 20.2605 18.9511 20.2505 18.9268C20.2404 18.9025 20.2256 18.8804 20.207 18.8618V18.8618ZM11.9258 11.9258C10.8906 12.9585 9.51856 13.5273 8.05859 13.5273C6.59863 13.5273 5.22656 12.9585 4.19141 11.9258C3.15869 10.8906 2.58984 9.51856 2.58984 8.05859C2.58984 6.59863 3.15869 5.22412 4.19141 4.19141C5.22656 3.15869 6.59863 2.58984 8.05859 2.58984C9.51856 2.58984 10.8931 3.15625 11.9258 4.19141C12.9585 5.22656 13.5273 6.59863 13.5273 8.05859C13.5273 9.51856 12.9585 10.8931 11.9258 11.9258Z" fill="white"/>
+</svg> <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.3125 8.3125V0H10.6875V8.3125H19V10.6875H10.6875V19H8.3125V10.6875L0 10.6875V8.3125L8.3125 8.3125Z" fill="white"/>
+    </svg>
+    
+</th> </th> </tr> 
+                    
+                    <div id="box">
+                            <input id="searcher" type="text" placeholder="Search" class="Search">
+                    </div>
                     <tr>
                         <td> jose</td>
                         <td> 2022</td>
                         <td> male</td>
                         <td><button id="ed" onclick="editTableRow();">Edit</button></td>
-                        <td><button id="del" onclick="removeSelectedRow">Remove</button></td>
+                        <td><button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </button></td>
                     </tr>
+
                     <tr>
                         <td> josefina</td>
                         <td> 2022</td>
                         <td>female</td>
                     <td><button id="ed" onclick="editTableRow();">Edit</button></td>
-                    <td><button id="del" onclick="removeSelectedRow">Remove</button></td>
+                    <td><button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </button></td>
                     </tr>
 
                     <tr>
@@ -38,141 +55,43 @@
                         <td> 20 </td>
                         <td>female</td>
                         <td><button id="ed"  onclick="editTableRow();">Edit</button></td>
-                        <td><button id="del" onclick="removeSelectedRow">Remove</button></td>
+                        <td><button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </button></td>
                     </tr>
-
-             
-                </div>
-
-         <div class="boxContainer">
-            <table class="elementsContainer">
-               <tr>
-                    <td>
-                        <input type="text" placeholder="Search" class="Search">
-                    </td>
-                    <td>
-                       <a href="#"></a>
-                    </td>
-               </tr>
-            </table>   
-           </div>
-            </table>
+                    <tfoot>
+                    <tr>
+                        <td>
+        <button id="circle" onclick="ids();">
+            <div class="line-wrapper">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+            </div>
+            </td>
+        </th>
+    </tfoot>
         </div>
-        <div class="table2" id="ids">
+        </button>
+        <!-- <div class="content"> -->
+        <div class="table2" id="ids" style="display: none;">
             First Name :<input type="text" placeholder="First Name" name="anun" id="anun">
             Last Name :<input type="text" placeholder="Last Name" name="maganun" id="maganun">
             Date of Birthday :<input type="date" placeholder="dd/mm/yy" name="darik" id="darik">
             Password :<input type="Password" placeholder="Password" name="passkey" id="passkey">
             Whish list :<input type="text" placeholder="100000$" name="whish" id="whish">
             Gender:
-             <input type="radio" id="male" name="Gender">Male
-             <input type="radio" id="male" name="Gender">Female
+             <input type="radio" value="male" id="male" name="Gender">Male
+             <label for="male">Male</label>
+             <!-- <input type="radio" id="male" name="Gender">Female  -->
+             <input type="radio" value="female" id="female" name="Gender" checked/>
+             <label for="female">Female</label>
                
              <button onclick="addTable();">Ok</button>
-             <button type="button">Cancel</button>
+             <button type="button" onclick="plus();">Cancel</button>
         </div>  
-        <script>
-            
-            var rIndex,
-                table= document.getElementById("top"),
-                ed=document.getElementById("edit"),
-                 del=document.getElementById("del");
-            
-
-            function checkEmptyInput(){
-              var isEmpty = false,
-                 anun = document.getElementById("anun").value,
-                 maganun = document.getElementById("maganun").value,
-                 darik = document.getElementById("darik").value,
-                 passkey = document.getElementById("passkey").value,
-                 whish = document.getElementById("whish").value,
-                 gender=document.getElementById("male").value;
-                 
-
-              if(anun === ""){
-                alert(" empty  first name");
-                isEmpty = true;}
-
-                else if(maganun === ""){
-                alert(" empty last name");
-                isEmpty = true;}
-
-                else if(darik === ""){
-                alert(" empty age");
-                isEmpty = true;}
-
-                if(passkey === ""){
-                alert("empty password");
-                isEmpty = true;}
-                return isEmpty;
-            }
-             
-            
-            function addTable(){
-                if (!checkEmptyInput()){
-             var table = document.getElementById("top"),
-             newRow = table.insertRow(table.length),
-             cell1= newRow.insertCell(0),
-             cell2= newRow.insertCell(1),
-             cell3= newRow.insertCell(2),
-             cell4= newRow.insertCell(3),
-             cell5= newRow.insertCell(4);
-             var holeNames = document.getElementById("anun").value + "";
-             holeNames += document.getElementById("maganun").value;
-             darik = document.getElementById("darik").value,
-             gender = document.getElementById("male").value,
-             ed = document.getElementById("ed").value,
-             del=document.getElementById("del").value;
-            //  anun = document.getElementById("anun").value,
-
-            cell1.innerHTML = holeNames;
-            cell2.innerHTML =darik;
-            cell3.innerHTML = gender;
-            cell4.innerHTML = ed ;
-            cell5.innerHTML=del;
-             }
-            }
-
-            function selectedRowToInput()
-            {
-                var rIndex,table= document.getElementById("top");
-                for (var i = 1; i < table.rows.length; i++)
-                {table.rows[i].onclick = function ()
-                {rIndex = this.rowIndex;
-                 document.getElementById("anun").value = this.cells[0].innerHTML;
-             holeNames += document.getElementById("maganun").value = this.cells[0].innerHTML;
-             darik = document.getElementById("darik").value = this.cells[1].innerHTML,
-             passkey = document.getElementById("passkey").value = this.cells[2].innerHTML,
-             whish = document.getElementById("whish").value = this.cells[3].innerHTML;
-            //  anun = document.getElementById("anun").value = this.cells[4].innerHTML,
-
-            };
-            }
-            }
-            selectedRowToInput();
-
-            function editTableRow(){
-                var anun = document.getElementById("anun").value,
-                  maganun = document.getElementById("maganun").value,
-                  darik = document.getElementById("darik").value,
-                  passkey = document.getElementById("passkey").value,
-                 whish = document.getElementById("whish").value;
-              
-                table.rows[rIndex].cells[0].innerHTML = "anun";
-                table.rows[rIndex].cells[1].innerHTML = "maganun";
-                table.rows[rIndex].cells[2].innerHTML = "darik";
-                table.rows[rIndex].cells[3].innerHTML = "passkey";
-                table.rows[rIndex].cells[4].innerHTML = "whish";
-              
-            }
-            function removeSelectedRow(){
-                var anun = document.getElementById("anun").value = "";
-                 document.getElementById("maganun").value = "",
-                 document.getElementById("darik").value  = "",
-                 document.getElementById("passkey").value = "",
-                 document.getElementById("whish").value = "";
-              table.deleteRow(rIndex);  
-            }
-        </script>  
+      </div> 
+    </div> 
+    <script src="./function.js"></script>
     </body> 
 </html> 
