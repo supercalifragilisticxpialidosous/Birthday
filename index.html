@@ -9,11 +9,11 @@
             <h1> Staff Birthday Calendar</h1>
     </head>
 
-
     <body>
         <div >
             <table class="container" id="top" border="1">
                 <div class="selections">
+                    <thead>
                     <tr>
                         <th class="name">Name &#9662;</th>
                         <th class="birthday">Birthday &#9662;</th>
@@ -23,16 +23,18 @@
     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.3125 8.3125V0H10.6875V8.3125H19V10.6875H10.6875V19H8.3125V10.6875L0 10.6875V8.3125L8.3125 8.3125Z" fill="white"/>
     </svg>
     
-</th> </th> </tr> 
+</th> </th> </tr> </thead>
                     
                     <div id="box">
-                            <input id="searcher" type="text" placeholder="Search" class="Search">
+                        <label for="search"> Search User</label>
+                            <input id="searcher" type="text" colespan="3">
                     </div>
+                    <tbody>
                     <tr>
                         <td> jose</td>
                         <td> 2022</td>
                         <td> male</td>
-                        <td><button id="ed" onclick="editTableRow();">Edit</button></td>
+                        <td><button id="ed" onclick="editTableRow(this);">Edit</button></td>
                         <td><button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -43,7 +45,7 @@
                         <td> josefina</td>
                         <td> 2022</td>
                         <td>female</td>
-                    <td><button id="ed" onclick="editTableRow();">Edit</button></td>
+                    <td><button id="ed" onclick="editTableRow(this);">Edit</button></td>
                     <td><button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -54,13 +56,15 @@
                         <td> rosealinda</td>
                         <td> 20 </td>
                         <td>female</td>
-                        <td><button id="ed"  onclick="editTableRow();">Edit</button></td>
+                        <td><button id="ed"  onclick="editTableRow(this);">Edit</button></td>
                         <td><button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             </button></td>
                     </tr>
-                    <tfoot>
+                    </tbody>
+                    <tfoot colespan="3">
+                    <tr></tr>
                     <tr>
                         <td>
         <button id="circle" onclick="ids();">
@@ -69,27 +73,30 @@
                 <div class="vertical"></div>
             </div>
             </td>
-        </th>
+        </tr>
     </tfoot>
         </div>
         </button>
+    
         <!-- <div class="content"> -->
         <div class="table2" id="ids" style="display: none;">
-            First Name :<input type="text" placeholder="First Name" name="anun" id="anun">
-            Last Name :<input type="text" placeholder="Last Name" name="maganun" id="maganun">
-            Date of Birthday :<input type="date" placeholder="dd/mm/yy" name="darik" id="darik">
-            Password :<input type="Password" placeholder="Password" name="passkey" id="passkey">
-            Whish list :<input type="text" placeholder="100000$" name="whish" id="whish">
-            Gender:
-             <input type="radio" value="male" id="male" name="Gender">Male
+            <label id="fn" >First Name </label><input type="text" placeholder="First Name" name="anun" id="anun">
+            <label id="ln" >Last Name </label><input type="text" placeholder="Last Name" name="maganun" id="maganun">
+            <label id="bd">Date of Birthday </label><input type="date" placeholder="dd/mm/yy" name="darik" id="darik">
+            <label id="pw" Password ></label><input type="Password" placeholder="Password" name="passkey" id="passkey">
+            <label id="wl" Whish list ></label><input type="text" placeholder="100000$" name="whish" id="whish">
+            <label id= "mf" Gender>
+             <input type="radio" value="male" id="male" name="Gender">
              <label for="male">Male</label>
              <!-- <input type="radio" id="male" name="Gender">Female  -->
              <input type="radio" value="female" id="female" name="Gender" checked/>
              <label for="female">Female</label>
+            </label>
                
              <button onclick="addTable();">Ok</button>
              <button type="button" onclick="plus();">Cancel</button>
-        </div>  
+        </div>
+  
       </div> 
     </div> 
     <script src="./function.js"></script>
