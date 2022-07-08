@@ -68,9 +68,6 @@ tr:hover {
   background-color: rgb(9, 219, 219);
   cursor: pointer;
 }
-tfoot{ 
-  margin-right: 250px;
-}
 #circle {
   /* position: absolute; */
   margin-left: 40px;
@@ -113,12 +110,33 @@ tfoot{
 .vertical.open {
   transform: rotate(180deg);
 }
+#searcher{
+  margin-left:50px;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  width: 550px;
+  color: #a59c9c; 
+}  
+
+#ok{
+  background-color: #b57369;
+  border: none;
+  color: white;
+}
+#cancel{
+  background-color: white;
+  border: none;
+  color: #b57369;
+}
+
 
 .table2 {
-  margin-top: 10px;
+  z-index: 9;
+  margin-top: 100px;
   margin-left: 500px;
   margin-right: 90px;
-  height: 0;
+  height: 100px;
   background: white;
   /*   padding: 10px; */
   overflow: hidden;
@@ -126,69 +144,54 @@ tfoot{
     transform-origin: top;
     position: relative; */
   transition: 0.5s ease;
-  z-index: -1;
 }
 .table2-wrapper {
   padding: 20px;
-  margin-left: 10px;
-    bottom: 20px;
-    left: 100px;
+  margin-bottom: 20px;
+  margin-top: 500px;
+  margin-left: 100px;
+  z-index: -2px;
 }
 .table2.open {
   border-radius: 25px;
   height: 300px;
-  width: 690px;
+  width: 700px;
   margin-left: 200px;
-  margin-bottom: 20px;
-  /* transform: scaleY(1);
-  position: relative; */
+  margin-bottom: 10px;
+  margin-top: 100px;
+  /* transform: scaleY(1);*/
+  /* position: relative;  */
 }
 #ids {
   margin-bottom: 20px;
-  margin-top: 150px;
+  margin-top: 350px;
   top: 420px;
   margin-left: 250px;
-}
- #searcher{
-  position:absolute;
-  margin-left:40px;
-  display: flex;
-  flex-direction: column;
-  gap: .25rem;
-  width: 550px;
-  color: #a59c9c; 
-} 
-
-#box{
-  height: 10px;
-  margin-left: 550px;
-  margin-top: 100px;
-  padding: 10px;
 }
 
 #fn {
   color:#b57369 ;
   padding: 20px;
   margin-left: 25px;
-  margin-top: 25px;
+  margin-top: 325px;
 }
 #ln{
   color:#b57369 ;
   padding: 20px;
   margin-left: 50px;
-  margin-top: 50px;
+  margin-top: 350px;
 }
 #bd{
   color:#b57369 ;
   padding: 20px;
   margin-left: 25px;
-  margin-top: 50px;
+  margin-top: 350px;
 }
 #pw{
   color:#b57369 ;
-  padding: 20px;
-  margin-left: 25px;
-  margin-top: 100px;
+  padding:20px;
+  margin-left:50px;
+  margin-top:300px;
 }
 #wl{
   color:#b57369 ;
@@ -201,4 +204,87 @@ tfoot{
   padding: 20px;
   margin-right: 25px;
   margin-top: 25px;
+}
+
+
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 200px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#yes{
+  border-radius: 5px;
+  background-color:#b57369;
+  height: 10px;
+  Width:116px;
+  Height:38px;
+}
+#no{
+  background-color:#b57369;
+  height: 10px;
+  Width:116px;
+  Height:38px;
+  border-radius:5px;
+  margin-left: 95px;
 }
