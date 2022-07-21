@@ -1,250 +1,239 @@
-let people = [
-  {
-    id: 1,
-    firstName: "jose",
-    lastName: "",
-    birthday: "2022",
-    gender: "male",
-    wishlist: [],
-    password: "1",
-  },
-  {},
-  {},
-];
+// function search() {
+//   let search = document.getElementById("srch");
+//   let srchArray = [];
+// }
+// class card {
+//   constructor(nameF, nameL, pass, date, gend, wl, id) {
+//     this.firstName = nameF;
+//     this.lastName = nameL;
+//     this.password = pass;
+//     this.date = date;
+//     this.gender = gend ? "Male" : "Female";
+//     this.wishList = [...wl];
+//     this.id = id;
+//   }
+// }
 
-let peopleCount = people.length;
-console.log("1", peopleCount);
-console.log("2", peopleCount);
+// let Ucard = [
+//   {
+//     firstName: "Frodo",
+//     lastName: "Baggins",
+//     password: "1234567890-=",
+//     date: "1990-03-24",
+//     gender: "Male",
+//     wishList: ["flower", "food", "friends"],
+//     id: 0,
+//   },
+//   {
+//     firstName: "Luke",
+//     lastName: "Skywalker",
+//     password: "1234567890-=",
+//     date: "2030-04-26",
+//     gender: "Male",
+//     wishList: ["quasedia", "Trolly", "job"],
+//     id: 1,
+//   },
+//   {
+//     firstName: "Leia",
+//     lastName: "Organa",
+//     password: "1234567890-=",
+//     date: "1200-5-19",
+//     gender: "Female",
+//     wishList: [ "nothing", "no people", "pizza"],
+//     id: 2,
+//   },
+// ];
 
-let rIndex,
-  table = document.getElementById("top");
+// console.log(Ucard);
 
+// function show(users) {
+//   let c = ``;
+//   let show = ``;
 
-function checkEmptyInput() {
-  let isEmpty = false,
-    anun = document.getElementById("anun").value,
-    maganun = document.getElementById("maganun").value,
-    darik = document.getElementById("darik").value,
-    passkey = document.getElementById("passkey").value,
-    whish = document.getElementById("whish").value,
-    gender = document.getElementById("male").value;
-   
-    
+//   for (i = 0; i < users.length; i++) {
+//     c = `<div onclick = "displayWL(${users[i].id})" class="useCard">
+//   <p class="info" >${users[i].firstName} ${users[i].lastName}</p>
+//   <p class="info" >${users[i].date}</p>
+//   <p class="info" >${users[i].gender}</p>
+//   <div>`
+//   show = show + ` ${c}`;
+//   }
+//   document.getElementById("card").innerHTML = show;
+// }
+// show(Ucard)
 
-  if (anun === "") {
-    alert(" empty  first name");
-    isEmpty = true;
-  } else if (maganun === "") {
-    alert(" empty last name");
-    isEmpty = true;
-  } else if (darik === "") {
-    alert(" empty age");
-    isEmpty = true;
-  }
+//   function addNewUser() {
 
-  if (passkey === "") {
-    alert("empty password");
-    isEmpty = true;
-  }
-  return isEmpty;
-}
+//   let nameF = document.getElementById("fN").value;
+//   let nameL = document.getElementById("lN").value;
+//   let pass = document.getElementById("Pass").value;
+//   let date = document.getElementById("DT").value;
+//   let gend = document.getElementById("G1").value;
+//   let wl = document.getElementById("WL").value;
 
-
-
-function searchName(){
-  let input,filter,table,tr,td,i,textValue;
-input=document.getElementById("searcher");
-filter=input.value.toUpperCase();
-table=document.getElementById("top");
-tr=table.getElementsByTagName("tr");
-
-for( i=0;i<tr.length;i++){
-  td=tr[i].getElementsByTagName("td")[0];
-
-  if(td){
-      textValue=td.textContext || td.innerText;
-      if(textValue.toUpperCase().indexOf(filter)>-1){
-          tr[i].style.display="";
-      } else{
-          tr[i].style.display= "none";
-      }
-  }
-}
-}
-
-
-
-
-function addTable() {
-  if (!checkEmptyInput()) {
-    let table = document.getElementById("top"),
-      newRow = table.insertRow(table.length),
-      cell1 = newRow.insertCell(0),
-      cell2 = newRow.insertCell(1),
-      cell3 = newRow.insertCell(2),
-      cell4 = newRow.insertCell(3),
-      cell5 = newRow.insertCell(4);
-
-    peopleCount = peopleCount + 1;
-    newRow.id = peopleCount;
-    console.log("newRow", newRow);
-
-    // let idd;
-    // for (let i = 0; i < newRow.length; i++) {
-    //   let idd = 0;
-    //   console.log("in for loop", idd);
-    //   idd += i;
-    //   console.log("in for loop", idd);
-    // }
-    // console.log("outside", idd);
-
-    let anun = document.getElementById("anun").value;
-    let maganun = document.getElementById("maganun").value;
-    let whish = document.getElementById("whish").value;
-    let passkey = document.getElementById("passkey").value;
-
-    let holeNames = document.getElementById("anun").value + "";
-    holeNames += document.getElementById("maganun").value;
-    let darik = document.getElementById("darik").value;
-    let isMale = document.getElementById("male").checked;
-    let gender;
-    if (isMale) {
-      gender = "Male";
-    } else {
-      gender = "Female";
-    }
-    let  ed = document.getElementById("ed").value;
-    ed=`<button id="ed"  onclick="editTableRow(${peopleCount});">Edit</button>`;
-
-    let del=document.getElementById("del").value;
-    del=`<button id="del" onclick="removeSelectedRow();"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 5H21M9.00002 10V15M13 10V15M3 5H19L17.42 19.22C17.3659 19.7094 17.1331 20.1616 16.7663 20.49C16.3995 20.8184 15.9244 21 15.432 21H6.56801C6.07565 21 5.60057 20.8184 5.23376 20.49C4.86694 20.1616 4.63417 19.7094 4.58 19.22L3 5ZM6.34501 2.147C6.50676 1.80397 6.76271 1.514 7.08301 1.31091C7.40331 1.10782 7.77475 0.999996 8.15401 1H13.846C14.2254 0.999806 14.5971 1.10755 14.9176 1.31064C15.2381 1.51374 15.4942 1.80381 15.656 2.147L17 5H5.00001L6.34501 2.147Z" stroke="#995D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg></button>`;
-
-    cell1.innerHTML = holeNames;
-    cell2.innerHTML = darik;
-    cell3.innerHTML = gender;
-    cell4.innerHTML = ed;
-    cell5.innerHTML = del;
-  }
-    people.push({
-      id: peopleCount,
-      firstName: anun,
-      lastName: maganun,
-      birthday: darik,
-      gender: male,
-      wishlist: whish,
-      password: passkey,
-    });
+//   if (nameF !== "" && nameL !== "" && pass !== "" && date !== "" && gend !== "" && wl !== ""){
   
-}
+//   }
 
-function selectedRowToInput() {
-  let rIndex,
-    table = document.getElementById("top");
-  for (let i = 1; i < top.rows; i++) {
-    table.rows[i].onclick = function () {
-      rIndex = this.rowIndex;
-      document.getElementById("anun").value = this.cells[0].innerHTML;
-      holeNames += document.getElementById("maganun").value =
-        this.cells[0].innerHTML;
-       document.getElementById("darik").value =
-        this.cells[1].innerHTML;
-      document.getElementById("passkey").value =this.cells[2].innerHTML;
-         document.getElementById("whish").value =this.cells[3].innerHTML;
-         document.getElementById("del").value=this.cells[4].innerHTML;
+   
+// }
 
-    };
-  }
-}
+// addBtn.addEventListener("click", createTodo);
 
-selectedRowToInput();
+// addInput.addEventListener("keypress", function(event){
+//   if(event.key === "Enter"){
+//     createTodo();
+//   }
+// });
 
-function editTableRow(el) {
-  let anun = document.getElementById("anun").value,
-    maganun = document.getElementById("maganun").value,
-    darik = document.getElementById("darik").value,
-    passkey = document.getElementById("passkey").value,
-    whish = document.getElementById("whish").value,
-    form = document.getElementById("");
+//   if (nameF !== "" && nameL !== "" && pass !== "" && date !== "" && wl !== "") {
+//     let wL = wl.split(",");
+//     let input = new card(nameF , nameL, pass, date, gend, wL);
 
-  console.log("this", table, del.parentElement.parentElement);
+//     if (editId == -1) {
+//       usecards.push(input);
+//       id++;
+//     } else {
+//       for (let i = 0; i < Ucard.length; i++) {
+//         if (editId == ucard[i].id) {
+//           Ucard.splice(i, 1, input);
+//           editId = -1;
+//           delEdit = -1;
+//         }
+//       }
+//     }
 
-  // table.rows[rIndex].cells[0].innerHTML = "anun";
-  // table.rows[rIndex].cells[1].innerHTML = "maganun";
-  // table.rows[rIndex].cells[2].innerHTML = "darik";
-  // table.rows[rIndex].cells[3].innerHTML = "passkey";
-  // table.rows[rIndex].cells[4].innerHTML = "whish";
-}
+//     document.getElementById("SUForm").style.display = "none";
+//     document.getElementById("new").style.display = "";
+//     displaying(Ucard);
+//     clearInput();
+//     console.log(input);
+//   } else {
+//     console.log("form");
+//   }
+// }
 
-function removeSelectedRow(){
-  for (var i=1;i<table.rows.length;i++){
-      table.rows[i].cells[4].onclick =function(){
-      rIndex=this.parentElement.rowIndex;
-      table.deleteRow(rIndex);
-      console.log(rIndex)
-  } 
-}
-}
+// circle button 
+// document.querySelector('.circle').addEventListener('click', () => {
+//   document.querySelector('.vertical').classList.toggle('open');
+//   document.querySelector('.line-wrapper').classList.toggle('open');
+//   document.querySelector('.content').classList.toggle('open');
+// });
 
-function Cancel(cancel) {
-  if (cancel == "cancel") {
-    document.getElementById("anun").value = "";
-    document.getElementById("maganun").value = "";
-    document.getElementById("darik").value = "";
-    document.getElementById("wish").value = "";
-  }
-}
 
-function plus() {
-  document.getElementById("circle").style.display = "";
-  document.getElementById("ids").style.display = "none";
-}
+// jQuery
+// $('.circle').on('click', () => {
+//   $('.line-wrapper').toggleClass('open');
+//   $('.vertical').toggleClass('open');
+//   $('.content').toggleClass('open');
+// });
 
-function ids() {
-  document.getElementById("circle").style.display = "none";
-  document.getElementById("ids").style.display = "block";
-}
+// for pop ups
+// function onDelete() {
+//   let confirmation = document.getElementById("confirmation");
+//   if (!confirmation.classList.contains("modal-open")) {
+//     confirmation.classList.add("modal-open");
+//   }
+// }
 
-document.getElementById("circle").addEventListener("click", () => {
-  document.querySelector(".vertical").classList.toggle("open");
-  document.querySelector(".line-wrapper").classList.toggle("open");
-  document.querySelector(".table2").classList.toggle("open");
+// document.addEventListener("DOMContentLoaded", () => {
+//   document
+//     .getElementById("confirmation")
+//     .addEventListener("click", onCancel);
+//   document
+//     .querySelector(".modal")
+//     .addEventListener("click", (e) => e.stopPropagation());
+// });
+
+// onCancel()
+
+// function passCheck () {
+//   if (Pass === passCheck){
+//     return true
+//      } else { 
+//       return false
+//     }
+//   }
+
+// function inpCheck (){
+//   if (fN !== null ) {
+//     console.log( "first name");
+//   } else if (lN !== null){
+//     console.log( "last name");
+//   } else if (G!== null){
+//     console.log ("gender");
+//   } else if (DT!== null){
+//     console.log ("date");
+//   } else if (WL!== null){
+//     console.log ("wish list");
+//   } else if (Pass!== null){
+//     console.log ("password");
+//   }else {
+//     console.log ("all filled");
+//   }
+// }
+
+
+
+window.addEventListener('load', () => {
+	const form = document.querySelector("#new-task-form");
+	const input = document.querySelector("#new-task-input");
+	const list_el = document.querySelector("#tasks");
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+
+		const task = input.value;
+
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
+
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
+
+		task_el.appendChild(task_content_el);
+
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('text');
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
+
+		task_content_el.appendChild(task_input_el);
+
+		const task_actions_el = document.createElement('div');
+		task_actions_el.classList.add('actions');
+		
+		const task_edit_el = document.createElement('button');
+		task_edit_el.classList.add('edit');
+		task_edit_el.innerText = 'Edit';
+
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
+
+		task_actions_el.appendChild(task_edit_el);
+		task_actions_el.appendChild(task_delete_el);
+
+		task_el.appendChild(task_actions_el);
+
+		list_el.appendChild(task_el);
+
+		input.value = '';
+
+		task_edit_el.addEventListener('click', (e) => {
+			if (task_edit_el.innerText.toLowerCase() == "edit") {
+				task_edit_el.innerText = "Save";
+				task_input_el.removeAttribute("readonly");
+				task_input_el.focus();
+			} else {
+				task_edit_el.innerText = "Edit";
+				task_input_el.setAttribute("readonly", "readonly");
+			}
+		});
+
+		task_delete_el.addEventListener('click', (e) => {
+			list_el.removeChild(task_el);
+		});
+	});
 });
-
-const openModalButtons = document.querySelectorAll("[data-modal-target]");
-const closeModalButtons = document.querySelectorAll("[data-close-button]");
-const overlay = document.getElementById("overlay");
-
-openModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = document.querySelector(button.dataset.modalTarget);
-    openModal(modal);
-  });
-});
-
-overlay.addEventListener("click", () => {
-  const modals = document.querySelectorAll(".modal.active");
-  modals.forEach((modal) => {
-    closeModal(modal);
-  });
-});
-
-closeModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = button.closest(".modal");
-    closeModal(modal);
-  });
-});
-
-function openModal(del) {
-  if (modal == null) return;
-  modal.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function closeModal(modal) {
-  if (modal == null) return;
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-}
